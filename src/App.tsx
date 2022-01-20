@@ -1,10 +1,19 @@
-import React from 'react';
+import { Header } from './components/Header';
 import './App.css';
+import { SearchForm } from './components/SearchForm';
+import { ResultList } from './components/ResultList';
 
 function App() {
   return (
     <div className="App">
-    </div>
+
+      <Header />
+
+      <SearchForm />
+
+      <ResultList />
+      
+      </div>
   );
 }
 
