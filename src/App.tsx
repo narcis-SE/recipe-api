@@ -1,18 +1,13 @@
-import { Header } from './components/Header';
+import Main from './components/Main';
 import './App.css';
-import { SearchForm } from './components/SearchForm';
-import { ResultList } from './components/ResultList';
+
 
 function App() {
   return (
     <div className="App">
 
-      <Header />
+      <Main />
 
-      <SearchForm />
-
-      <ResultList />
-      
       </div>
   );
 }
