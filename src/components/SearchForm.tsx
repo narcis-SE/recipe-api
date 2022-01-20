@@ -1,5 +1,5 @@
 
-export const SearchForm = () => {
+export function SearchForm() {
     return (
      
         <div className="SearchForm">

@@ -1,9 +1,10 @@
 
-export const FavoriteList = () => {
+export function FavoriteList() {
     return (
         <div>
-            <h1>Favorites List</h1>
+            <h1>Favorite List</h1>
             
         </div>
     )
 }
+
