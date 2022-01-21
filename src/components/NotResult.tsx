@@ -1,11 +1,18 @@
-import React from 'react'
 import { Hits } from '../models/recipe-model';
-import { Recipe } from '../models/recipe-model';
-import "./Result.css";
-
-interface RecipeProp {
-    recipe: Recipe
+import { Main } from './Main';
+export interface Props {
+    recipes: Hits[]
 }
+
+export const Result = ({recipes}:Props)=>{
+    return(
+        <div>
+            {recipes.map((recipe,i)=> <Main key={i} recipe={recipe}/>)}
+        </div>
+    )
+}
+
+
 
 // export function Result({recipe}:RecipeProp) {
 //     return (
