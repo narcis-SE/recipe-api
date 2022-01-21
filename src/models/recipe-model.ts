@@ -13,7 +13,11 @@ export interface Hits{
             }
         }
         url: string,
-        ingredientLines:[]
+        ingredients:[
+            {
+                text: string
+            }
+        ]
         }
     }
 
