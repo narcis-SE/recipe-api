@@ -5,11 +5,7 @@ export interface Hits{
     recipe:{
         label: string,
         image: string
-    }
-
-    ingredients:[
-        {
-            text: string 
+        ingredientLines:[]
         }
-    ]
-}
+    }
+    

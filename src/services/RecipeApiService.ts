@@ -12,5 +12,5 @@ export function fetchRecipe():Promise<Hits[]> {
             api_key: apiKey
         }
     })
-    
+    .then(res=>res.data.hits)
 }
