@@ -41,10 +41,7 @@ import "./ResultList.css";
                 <SearchForm onSubmit={handleFormSubmit}/>
              <ul>
                 {recipeList.map((recipe, i) => <Result key={i} recipe={recipe} />)}  
-            </ul>
-
-                {/* <Result recipe={recipe}/> */}
-                
+            </ul>  
             </div>
  
 
