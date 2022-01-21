@@ -4,8 +4,17 @@ export interface Recipe{
 export interface Hits{
     recipe:{
         label: string,
-        image: string
+        images: {
+            SMALL: {
+                url: string
+            }
+            REGULAR: {
+                url: string
+            }
+        }
+        url: string,
         ingredientLines:[]
         }
     }
+
     
