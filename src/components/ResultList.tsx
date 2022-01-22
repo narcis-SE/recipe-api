@@ -5,6 +5,7 @@ import { searchRecipe } from "../services/RecipeApiService";
 import { SearchForm } from "./SearchForm";
 import { Result } from "./Result";
 import "./ResultList.css";
+import { ResultExpanded } from "./ResultExpanded";
 
 
     export interface RecipeProp{
@@ -18,6 +19,10 @@ import "./ResultList.css";
     
         useEffect( ()=>{
             if(searchTerm){
+            // {
+            //     if (isChecked) {
+            //         searchTerm = searchTerm + ;
+            //   }
                 searchRecipe(searchTerm).then(
                     response => setRecipeList(response)
                 )
@@ -40,7 +45,8 @@ import "./ResultList.css";
             
                 <SearchForm onSubmit={handleFormSubmit}/>
              <ul>
-                {recipeList.map((recipe, i) => <Result key={i} recipe={recipe} />)}  
+                {recipeList.map((recipe, i) => <Result key={i} recipe={recipe} />)}
+
             </ul>  
             </div>
  
