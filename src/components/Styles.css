@@ -13,7 +13,6 @@
 
 body {
     margin: 0px;
-    background-color: antiquewhite;
     color: rgb(194, 113, 20);
 }
 
@@ -23,7 +22,29 @@ body {
     color: rgb(194, 113, 20)
 }
 
+p {
+    font-family: Poppins;
+    font-size: 16px;
+}
+
+h3 {
+    font-family: Dancing Script;
+    font-size: 30px;
+}
+
+.link {
+    font-family: Dancing Script;
+    font-size: 16px;
+}
+
+.SearchForm  {
+    display: flex;
+    align-items: center;
+}
+
+/*.ResultListContainer is for search input and button need to be adjuest the name */
 .ResultListContainer {
+    font-family: Dancing Script;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -33,6 +54,40 @@ body {
     color: brown;
 }
 
+.Result, .ResultContainer {
+    border-radius: 5px;
+    border-bottom: 2px solid darkred;
+    background-color: #fff;
+    color: brown;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+
+}
+
+img {
+    border-radius: 50%;
+    box-shadow: dimgray;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+img:hover {
+    position: relative;
+    z-index: 999;
+    transform: scale(1.5);
+}
+
+.image {
+    box-shadow: rgb(145, 141, 141);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
 .topNav {
     overflow: hidden;
