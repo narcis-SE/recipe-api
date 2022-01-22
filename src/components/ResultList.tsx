@@ -5,15 +5,39 @@ import { searchRecipe } from "../services/RecipeApiService";
 import { SearchForm } from "./SearchForm";
 import { Result } from "./Result";
 import "./ResultList.css";
+import { ResultExpanded } from "./ResultExpanded";
 
 export interface RecipeProp {
   recipe: Hits[];
   setRecipe: () => void;
 }
 
-export function ResultList() {
-  const [recipeList, setRecipeList] = useState<Hits[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>("");
+
+    export interface RecipeProp{
+        recipe: Hits[]
+        setRecipe: () => void
+    }
+    
+    export function ResultList() {
+        const[recipeList, setRecipeList] = useState<Hits[]>([])
+        const[searchTerm, setSearchTerm] = useState<string>("");
+    
+        useEffect( ()=>{
+            if(searchTerm){
+            // {
+            //     if (isChecked) {
+            //         searchTerm = searchTerm + ;
+            //   }
+                searchRecipe(searchTerm).then(
+                    response => setRecipeList(response)
+                )
+            } else{
+                fetchRecipe().then(
+                    recipe=>setRecipeList(recipe)
+                )
+    
+            }
+        }, [searchTerm])
 
   useEffect(() => {
     if (searchTerm) {
@@ -23,9 +47,11 @@ export function ResultList() {
     }
   }, [searchTerm]);
 
+
   function handleFormSubmit(searchTerm: string) {
     setSearchTerm(searchTerm);
   }
+
 
   return (
     <div className="ResultList">

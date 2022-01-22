@@ -1,18 +1,13 @@
-
 import { useState } from 'react';
+import { text } from 'stream/consumers';
 import { Hits } from '../models/recipe-model';
 import "./Result.css"
 
-
 export interface SmallRecipeProp {
-  recipe: Hits;
+    recipe: Hits,
 }
 
-export function Result({ recipe }: SmallRecipeProp) {
-  const [noImage, setNoImage] = useState(false);
-
-
-    const[check, setCheck] = useState<boolean>(true);
+export function ResultExpanded({recipe}:SmallRecipeProp) {
 
     return (
         <div className="Result">
@@ -22,29 +17,17 @@ export function Result({ recipe }: SmallRecipeProp) {
             <img src={recipe.recipe.image} alt="" /> 
             </div>
             
-            {/* <ul>
+            <ul>
             {recipe.recipe.ingredients.map((ingredient, i) => 
                 <li key={i}>
                     {ingredient.text}
                 </li>)} 
-            </ul> */}
+            </ul>
 
             <p className="link"><a href={recipe.recipe.url} target="_blank">Link to Recipe</a></p>
         </div>
-      )}
-
-      <ul>
-        <p>
-          {recipe.recipe.ingredientLines.map((ingredient, i) => (
-            <li key={i}>{ingredient}</li>
-          ))}
-        </p>
-      </ul>
-      <p className="link">
-        <a href={recipe.recipe.url} target="_blank">
-          Link to Recipe
-        </a>
-      </p>
-    </div>
-  );
+    )
 }
+
+
+
