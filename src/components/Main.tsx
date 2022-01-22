@@ -1,17 +1,18 @@
-import { Header } from './Header';
-import { SearchForm } from './SearchForm';
-import { ResultList } from './ResultList';
+import { Header } from "./Header";
+import { SearchForm } from "./SearchForm";
+import { ResultList } from "./ResultList";
+import "./Styles.css"
 
 export default function Main() {
   return (
-  <div>
+    <div className="Main">
+      <div className="topNav">
         <Header />
-
         {/* <SearchForm /> */}
-
-        <ResultList />
-
-  </div>
+      </div>
+        <div className="ResultListContainer">
+      <ResultList />
+      </div>
+    </div>
   );
-  
 }
