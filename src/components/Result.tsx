@@ -33,18 +33,18 @@ export function Result({ recipe }: SmallRecipeProp) {
         </div>
       )}
 
-      <ul>
-        <p>
-          {recipe.recipe.ingredientLines.map((ingredient, i) => (
-            <li key={i}>{ingredient}</li>
-          ))}
-        </p>
-      </ul>
-      <p className="link">
-        <a href={recipe.recipe.url} target="_blank">
-          Link to Recipe
-        </a>
-      </p>
-    </div>
-  );
-}
+//       <ul>
+//         <p>
+//           {recipe.recipe.ingredientLines.map((ingredient, i) => (
+//             <li key={i}>{ingredient}</li>
+//           ))}
+//         </p>
+//       </ul>
+//       <p className="link">
+//         <a href={recipe.recipe.url} target="_blank">
+//           Link to Recipe
+//         </a>
+//       </p>
+//     </div>
+//   );
+// }
