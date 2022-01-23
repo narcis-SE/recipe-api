@@ -7,7 +7,6 @@ interface SearchReicpe {
 
 export function SearchForm({onSubmit}:SearchReicpe) {
     const [searchTerm, setSearchTerm] = useState<string>("");
-    // const [ isChecked, setIsChecked ] = useState<Boolean>(true);
 
     function handleSearchSubmit(event: FormEvent){
         event.preventDefault();
