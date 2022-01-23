@@ -32,8 +32,6 @@ function LikeButton(){
     //     }
     // }
 
-    
-
 
     return(
         <div className={isClick? "liked": "unliked"}>
