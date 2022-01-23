@@ -1,10 +1,10 @@
-
 import { useState, useEffect } from 'react';
 import { Hits } from '../models/recipe-model';
 import Modal from 'react-modal';
 import { ResultExpanded } from './ResultExpanded';
 import { SmallRecipeProp } from './ResultList';
 import "./Result.css"
+import LikeButton from './LikeButton';
 
 export interface RecipeProp {
   recipe: Hits;
@@ -59,6 +59,7 @@ return (
         
             </Modal>
              }
+             <LikeButton />
 
         <p className="link"><a href={recipe.recipe.url} target="_blank">Link to Recipe</a></p>
       </div>
