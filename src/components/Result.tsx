@@ -1,50 +1,65 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Hits } from '../models/recipe-model';
+import Modal from 'react-modal';
+import { ResultExpanded } from './ResultExpanded';
+import { SmallRecipeProp } from './ResultList';
 import "./Result.css"
-import { BrowserRouter as Router, Link, Navigate, Route, Routes } from 'react-router-dom';
 
-
-export interface SmallRecipeProp {
+export interface RecipeProp {
   recipe: Hits;
+  onClose: ()=>void
 }
 
-export function Result({ recipe }: SmallRecipeProp) {
-  const [noImage, setNoImage] = useState(false);
+export function Result({ recipe,}: SmallRecipeProp) {
 
 
-    const[check, setCheck] = useState<boolean>(true);
+  let [ openExpanded, setOpenExpanded ] = useState(false);
+  
+  function openModal() {
+      setOpenExpanded(true);
+  }
+  function closeModal() {
+      setOpenExpanded(false);
+  }
 
-    return (
-        <div className="Result">
-            <h3>{recipe.recipe.label}</h3>
+  // useEffect(()=> {Modal.setAppElement('#');})
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
 
-            <div className="image">
-            <img src={recipe.recipe.image} alt="" /></div>
+return (
+  <div className="Result">
+    <h3>{recipe.recipe.label}</h3>
 
-            {/* <Link to="/ResultExpanded">Click here to see more details</Link> */}
-            {/* <Router>
-                <Link to=“/DetailExtended">Click here to see more details</Link> 
-            <Routes>   
-                <Route path=“/detailextended” element={<DetailExtended />} />
-            </Routes>
-            </Router> */}
-            <p className="link"><a href={recipe.recipe.url} target="_blank">Link to Recipe</a></p>
-        </div>
+      <div className="image">
+        <img src={recipe.recipe.image} alt="" onClick={openModal}/></div>
+
+
+        {/* <button onClick={openModal}>View Details</button> */}
+            <div id="Result"></div>
+
+           {openExpanded && 
+
+            <Modal
+            isOpen={openExpanded}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+            >
+          
+            <ResultExpanded recipe={recipe} onClose={closeModal}/>
+        
+            </Modal>
+             }
+
+        <p className="link"><a href={recipe.recipe.url} target="_blank">Link to Recipe</a></p>
+      </div>
       )}
-
-//       <ul>
-//         <p>
-//           {recipe.recipe.ingredientLines.map((ingredient, i) => (
-//             <li key={i}>{ingredient}</li>
-//           ))}
-//         </p>
-//       </ul>
-//       <p className="link">
-//         <a href={recipe.recipe.url} target="_blank">
-//           Link to Recipe
-//         </a>
-//       </p>
-//     </div>
-//   );
-// }
