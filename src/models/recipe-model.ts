@@ -1,4 +1,6 @@
 export interface Recipe{
+    from: number | undefined;
+    to: number | undefined;
     hits: Hits[]
 }
 export interface Hits{
