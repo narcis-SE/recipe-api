@@ -9,8 +9,6 @@ import "./ResultList.css";
 
 export interface SmallRecipeProp {
   recipe: Hits,
-  // onClose: ()=>void,
-  // onClick: ()=>void
 }
 
 export function ResultList() {

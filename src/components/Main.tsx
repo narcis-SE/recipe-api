@@ -1,5 +1,4 @@
 import { Header } from "./Header";
-import { SearchForm } from "./SearchForm";
 import { ResultList } from "./ResultList";
 import "./Styles.css"
 

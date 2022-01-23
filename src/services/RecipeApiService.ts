@@ -10,7 +10,7 @@ export function fetchRecipe():Promise<Hits[]> {
     return axios.get("https://api.edamam.com/api/recipes/v2",{
         params:{
             type: "public",
-            q: "dinner",
+            q: "main+course",
             app_id: apiId,
             app_key: apiKey
         }
