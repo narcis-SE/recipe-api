@@ -16,4 +16,9 @@ export interface Hits{
         }
     }
 
+export let recipeGroup: Hits[] = []
+export function addRecipe(recipe: Hits){
+    recipeGroup.push(recipe);
+}
+
     

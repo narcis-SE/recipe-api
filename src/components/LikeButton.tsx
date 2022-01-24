@@ -1,21 +1,29 @@
-import { format } from "path/posix";
 import React, {useState} from "react";
 import Heart from "react-animated-heart";
-import { Hits, Recipe } from "../models/recipe-model";
-import { fetchRecipe } from "../services/RecipeApiService";
-import { FavoriteList } from "./FavoriteList";
-
-
-export interface SmallRecipeProp {
-    recipe: Hits,
-  }
+import { Hits } from "../models/recipe-model";
+import { recipeGroup, addRecipe } from "../models/recipe-model";
 
 function LikeButton(){
+
+    let [recipes, setRecipes] = useState<Hits[]>(recipeGroup)
+    function handleAdd(recipe: Hits){
+        setRecipes(prevRecipes => {
+            const newRecipes = prevRecipes?.slice(0);
+            newRecipes?.push(recipe);
+            return newRecipes;
+        });
+        addRecipe(recipe)
+    }
+
+
+
+
     const [isClick, setClick] = useState(false);
     const likeButton = ()=>{
         setClick(!isClick)
     }
-    const [value, setValue] = useState("")
+    
+    
     // const handleChange = (e) => {
     //     setValue(e.target.value);
     //     localStorage.setItem("inputValue", e.target.value);
