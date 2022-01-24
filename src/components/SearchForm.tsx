@@ -11,26 +11,51 @@ export interface FilterProps {
 }
 
 export function SearchForm({onSubmit}:SearchReicpe) {
-    const [searchTerm, setSearchTerm] = useState<string>("");
 
-    const[isClick, setClick] = useState(true);
-
-    const checkButton = ()=>{
-      setClick(!isClick)
-    }
+    let [searchTerm, setSearchTerm] = useState<string>("");
+    const [textSearchTerm, setTextSearchTerm] = useState<string>("");
+    const [checked, setChecked] = useState(false)
 
 
-    function handleSearchSubmit(event: FormEvent){
-        event.preventDefault();
+    const handleClick = () => setChecked(!checked)
 
-        onSubmit(searchTerm);
-        setSearchTerm(searchTerm);
+    function handleSearchSubmit(e: FormEvent){
+        e.preventDefault();
+ 
+      onSubmit(textSearchTerm + searchTerm);
     }
     
   const [ showFilters, setShowFilters ] = useState(false);
   
   const clickOnce = () => setShowFilters(true);
   const clickTwice = () => setShowFilters(false);
+
+      // TEST CODE FOR CHECKBOXES
+      // const [vegetarian, setVegetarian] = useState(false)
+      // const [glutenFree, setGlutenFree] = useState(false)
+      // const [lowCarb, setLowCarb] = useState(false)
+  
+      // if (vegetarian) {
+      //     searchTerm = "+&vegetarian"
+      // }
+      // else {
+      //   searchTerm = searchTerm;
+      // }
+  
+      // if (lowCarb) {
+      //     searchTerm2 = searchTerm + "&lowCarb"
+      // }
+      // else {
+      //   searchTerm = searchTerm
+      // }
+  
+      // if (glutenFree) {
+      //     searchTerm = "&glutenFree"
+      // }
+      // else {
+      //   searchTerm = searchTerm
+      // }
+      // END TEST CODE
 
 return (
      
@@ -49,7 +74,7 @@ return (
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
       <label className="label-search" htmlFor="search">  Search for a recipe</label><br />
-      <input type="text" name="search" onChange={(e)=>setSearchTerm(e.target.value)} />
+      <input type="text" name="search" onChange={(e)=>setTextSearchTerm(e.target.value)} />
 
     { !showFilters ?
     <p className="filterClickHere" onClick={clickOnce}>Click here to filter by type</p> : 
@@ -61,29 +86,48 @@ return (
         <div className="innerContainer1">
           <p className="filter-class">Meal: </p>
     
+{/* TEST CODE FOR NEW BOXES */}
+{/* <input type="checkbox" name="vegetarian" id="vegetarian" value="&vegetarian" onClick={handleClick}
+            onChange={!checked ? ()=>setVegetarian(true) : ()=>setVegetarian(false)} />
+          <label className="label-filter" htmlFor="vegetarian">Vegetarian</label>
+       <br/>
+          <input type="checkbox" name="glutenFree" id="glutenFree" value="&gluten+free" onClick={handleClick}
+            onChange={!checked ? ()=>setGlutenFree(true) : ()=>setGlutenFree(false)} />
+          <label className="label-filter" htmlFor="glutenFree">Gluten Free</label>
+       <br/>
+          <input type="checkbox" name="lowCarb" id="lowCarb" value="&low+carb" onClick={handleClick}
+            onChange={!checked ? ()=>setLowCarb(true) : ()=>setLowCarb(false)} />
+          <label className="label-filter" htmlFor="lowcarb">Low Carb</label>
+       <br/> */}
+{/* END TEST CODE */}
 
-          <input type="checkbox" name="breakfast" id="breakfast" value="breakfast" onClick={checkButton}
-            onChange={isClick?  ()=>setSearchTerm(searchTerm + "&breakfast"): ()=>setSearchTerm(searchTerm + "")} />
+        {/* OTHER TRIALS in first 3: */}
+          <input type="checkbox" name="breakfast" id="breakfast" value="&breakfast" onClick={handleClick}
+            onChange={ !checked ? ()=>setSearchTerm("&breakfast") : ()=>setSearchTerm(textSearchTerm)}/>
 
           <label className="label-filter" htmlFor="breakfast">Breakfast</label>
        <br/>
-          <input type="checkbox" name="brunch" id="brunch" value="brunch"
-            onChange={()=>setSearchTerm(searchTerm + "&brunch")} />
+          <input type="checkbox" name="brunch" id="brunch" value="&brunch" onClick={handleClick}
+            onChange={ !checked ? ()=>setSearchTerm("&brunch") : ()=>setSearchTerm(textSearchTerm)} />
           <label className="label-filter" htmlFor="brunch">Brunch</label>
        <br/>
-          <input type="checkbox" name="lunch-dinner" id="lunch-dinner" value="lunch/dinner"
-            onChange={()=>setSearchTerm(searchTerm + "&lunch/dinner")} />
+          <input type="checkbox" name="lunch-dinner" id="lunch-dinner" value="&lunch/dinner" onClick={handleClick}
+            onChange={ !checked ? ()=>setSearchTerm("&lunch/dinner") : ()=>setSearchTerm(textSearchTerm)} />
           <label className="label-filter" htmlFor="lunch-dinner">Lunch/Dinner</label>
       <br />
-          <input type="checkbox" name="appetizer" id="appetizer" value="appetizer"
+      {/* ///// */}
+
+
+
+          <input type="checkbox" name="appetizer" id="appetizer" value="&appetizer"
             onChange={()=>setSearchTerm(searchTerm + "&appetizer")} />
           <label className="label-filter" htmlFor="appetizer">Appetizer</label>
        <br/>
-          <input type="checkbox" name="cocktails" id="cocktails" value="cocktails"
+          <input type="checkbox" name="cocktails" id="cocktails" value="&cocktails"
             onChange={()=>setSearchTerm(searchTerm + "&cocktails")} />
           <label className="label-filter" htmlFor="cocktails">Cocktails</label>
        <br/>
-          <input type="checkbox" name="dessert" id="dessert" value="dessert"
+          <input type="checkbox" name="dessert" id="dessert" value="&dessert"
             onChange={()=>setSearchTerm(searchTerm + "&dessert")} />
           <label className="label-filter" htmlFor="dessert">Dessert</label>
        <br/>
@@ -200,6 +244,7 @@ return (
         </div>
         </div>
           <button type="submit" className="submit-btn">Search</button>
+          <button type="reset" className="submit-btn">Reset Search</button>
         </div>
           </form>  
           </div>
