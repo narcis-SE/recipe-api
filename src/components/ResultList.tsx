@@ -43,7 +43,9 @@ export function ResultList() {
       <h1>Recipes For You</h1>
       <ul className="ResultContainer">
         {recipeList.map((recipe, i) => (
+
            <Result key={i} recipe={recipe} onFavorite={addToFavorites} //onClose={closeModal} onClick={openModal}
+
            />  ))}
       </ul>
     </div>
