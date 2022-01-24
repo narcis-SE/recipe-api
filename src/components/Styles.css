@@ -23,12 +23,11 @@ body {
   color: #dcb69f;
   background: whitesmoke;
   border: solid;
-
 }
 
 .Header {
   font-family: Dancing Script;
-  background-color: #CDB1AD;
+  background-color: #cdb1ad;
   color: #2e2b21;
 }
 
@@ -50,6 +49,8 @@ h3 {
 .SearchForm {
   display: flex;
   align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
 }
 
 /*.ResultListContainer is for search input and button need to be adjuest the name */
@@ -60,28 +61,29 @@ h3 {
   align-items: flex-start;
   border: 2px #382119;
   border-radius: 5px;
-  background-color: #e2dad1;
+  /* background-color: #e2dad1; */
   color: #382119;
 }
 
 .Result {
-  border: #383745 solid 3px;
-  border-radius: 5px;
- /* border-bottom: 2px #382119; */
-  background-color: #e2dad1;
+  /* border: #383745 solid 2px; */
+  /* border-bottom: 2px #382119; */
+  border-radius: 20px;
   color: #382119;
   font-size: 16px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
-  padding: 15px;
-
+  padding: 25px;
+  margin: 30px;
+  background-color: #faf2ea;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
 }
 
 .ResultContainer {
   border: #e2dad1 solid 2px;
   border-radius: 5px;
- /* border-bottom: 2px #382119; */
+  /* border-bottom: 2px #382119; */
   background-color: #e2dad1;
   color: #382119;
   font-size: 16px;
@@ -110,6 +112,10 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.FavoriteList {
+  margin: 0;
 }
 
 .topNav {
@@ -167,6 +173,8 @@ img {
 .topnav .searchFormContainer button:hover {
   background: #ccc;
 }
+
+
 
 @media screen and (max-width: 768px) {
   .topnav .searchFormContainer {
