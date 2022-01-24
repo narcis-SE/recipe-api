@@ -39,7 +39,7 @@ export function ResultList() {
       <h1>Recipes For You</h1>
       <ul className="ResultContainer">
         {recipeList.map((recipe, i) => (
-           <Result key={i} recipe={recipe} //onClose={closeModal} onClick={openModal}
+           <Result key={i} recipe={recipe}
            />  ))}
       </ul>
     </div>

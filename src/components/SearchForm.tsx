@@ -13,18 +13,24 @@ export interface FilterProps {
 export function SearchForm({onSubmit}:SearchReicpe) {
     const [searchTerm, setSearchTerm] = useState<string>("");
 
+    // let newSearch: = {};
+
+    // function searchTermObject() {
+    //   newSearch = {
+
+    //   }
+    // }
+
     function handleSearchSubmit(event: FormEvent){
         event.preventDefault();
 
         onSubmit(searchTerm);
     }
-
-  
+    
   const [ showFilters, setShowFilters ] = useState(false);
   
   const clickOnce = () => setShowFilters(true);
   const clickTwice = () => setShowFilters(false);
-
 
 return (
      
@@ -42,7 +48,6 @@ return (
                     >
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
-        
       <label className="label-search" htmlFor="search">  Search for a recipe</label><br />
       <input type="text" name="search" onChange={(e)=>setSearchTerm(e.target.value)} />
 
@@ -56,15 +61,15 @@ return (
         <div className="innerContainer1">
           <p className="filter-class">Meal: </p>
     
-          <input type="checkbox" name="breakfast" id="breakfast" value="breakfast"
-            onChange={()=>setSearchTerm(searchTerm + "&breakfast")} />
+          <input type="checkbox" name="breakfast" id="breakfast" value="=&breakfast"
+            onChange={(e)=>setSearchTerm(e.target.value)} />
           <label className="label-filter" htmlFor="breakfast">Breakfast</label>
        <br/>
           <input type="checkbox" name="brunch" id="brunch" value="brunch"
             onChange={()=>setSearchTerm(searchTerm + "&brunch")} />
           <label className="label-filter" htmlFor="brunch">Brunch</label>
        <br/>
-          <input type="checkbox" name="lunch-dinner" id="lunch-dinner" value="lunch+dinner"
+          <input type="checkbox" name="lunch-dinner" id="lunch-dinner" value="lunch/dinner"
             onChange={()=>setSearchTerm(searchTerm + "&lunch/dinner")} />
           <label className="label-filter" htmlFor="lunch-dinner">Lunch/Dinner</label>
       <br />
@@ -192,10 +197,9 @@ return (
         </div>
         </div>
         </div>
-               <button type="submit" className="submit-btn">Search</button>
-               <button type="reset"className="submit-btn">Reset</button>
-                </div>
-            </form>  
-            </div>
+          <button type="submit" className="submit-btn">Search</button>
+        </div>
+          </form>  
+          </div>
         )
     }
