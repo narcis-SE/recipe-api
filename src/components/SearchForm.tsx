@@ -75,8 +75,7 @@ return (
     <form>
         <div className="searchBar">
           
-      <label className="label-search" htmlFor="search">Search for a recipe</label><br />
-      <input type="text" name="search" onChange={(e)=>setSearchTerm(e.target.value)} /><svg
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
