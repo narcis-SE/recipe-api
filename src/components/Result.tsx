@@ -39,6 +39,10 @@ return (
   <div className="Result">
     <h3>{recipe.recipe.label}</h3>
 
+        <div className='Favorite'>
+            
+        </div>
+
       <div className="image">
         <img src={recipe.recipe.image} alt="" onClick={openModal}/></div>
 

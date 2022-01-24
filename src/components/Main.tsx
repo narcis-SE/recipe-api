@@ -6,9 +6,7 @@ export default function Main() {
 
   return (
     <div className="Main">
-      <div className="topNav">
-        <Header />
-      </div>
+      
       <div className="ResultListContainer">
         <ResultList />
       </div>
