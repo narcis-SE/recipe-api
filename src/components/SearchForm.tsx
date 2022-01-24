@@ -23,7 +23,7 @@ export function SearchForm({onSubmit}:SearchReicpe) {
         event.preventDefault();
 
         onSubmit(searchTerm);
-        setSearchTerm(searchTerm);
+        setSearchTerm("");
     }
 
   
@@ -200,7 +200,7 @@ return (
         </div>
         </div>
                <button type="submit" className="submit-btn">Search</button>
-               <button type="reset"className="submit-btn">Reset</button>
+               <button type="reset"className="submit-btn" onClick={(e)=>setSearchTerm("")}>Reset</button>
                 </div>
             </form>  
             </div>

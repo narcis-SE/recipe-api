@@ -4,6 +4,7 @@ import { fetchRecipe } from "../services/RecipeApiService";
 import { searchRecipe } from "../services/RecipeApiService";
 import { SearchForm } from "./SearchForm";
 import { Result } from "./Result";
+import { favorites, addFavorite } from "../models/favoritesLists";
 import "./ResultList.css";
 
 
@@ -27,7 +28,10 @@ export function ResultList() {
   function handleFormSubmit(searchTerm: string) {
     setSearchTerm(searchTerm);
   }
-
+  
+  function addToFavorites(recipe: Hits){
+    addFavorite(recipe)
+  }
 
   return (
     <div className="ResultList">
@@ -39,7 +43,7 @@ export function ResultList() {
       <h1>Recipes For You</h1>
       <ul className="ResultContainer">
         {recipeList.map((recipe, i) => (
-           <Result key={i} recipe={recipe} //onClose={closeModal} onClick={openModal}
+           <Result key={i} recipe={recipe} onFavorite={addToFavorites} //onClose={closeModal} onClick={openModal}
            />  ))}
       </ul>
     </div>
