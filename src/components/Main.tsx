@@ -12,6 +12,7 @@ export default function Main() {
       <div className="ResultListContainer">
         <ResultList />
       </div>
+     
     </div>
   );
 }
