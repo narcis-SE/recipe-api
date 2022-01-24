@@ -12,17 +12,22 @@ export interface FilterProps {
 
 export function SearchForm({onSubmit}:SearchReicpe) {
 
+    let resetParams = "";
+
     let [searchTerm, setSearchTerm] = useState<string>("");
     const [textSearchTerm, setTextSearchTerm] = useState<string>("");
     const [checked, setChecked] = useState(false)
 
 
-    const handleClick = () => setChecked(!checked)
+    const handleClick = () => {
+      setChecked(true)
+    }
 
     function handleSearchSubmit(e: FormEvent){
         e.preventDefault();
  
       onSubmit(textSearchTerm + searchTerm);
+      setChecked(false);
     }
     
   const [ showFilters, setShowFilters ] = useState(false);
@@ -103,7 +108,7 @@ return (
 
         {/* OTHER TRIALS in first 3: */}
           <input type="checkbox" name="breakfast" id="breakfast" value="&breakfast" onClick={handleClick}
-            onChange={ !checked ? ()=>setSearchTerm("&breakfast") : ()=>setSearchTerm(textSearchTerm)}/>
+            onChange={ !checked ? ()=>setSearchTerm("&breakfast") :()=>setSearchTerm(textSearchTerm)}/>
 
           <label className="label-filter" htmlFor="breakfast">Breakfast</label>
        <br/>
@@ -116,8 +121,6 @@ return (
           <label className="label-filter" htmlFor="lunch-dinner">Lunch/Dinner</label>
       <br />
       {/* ///// */}
-
-
 
           <input type="checkbox" name="appetizer" id="appetizer" value="&appetizer"
             onChange={()=>setSearchTerm(searchTerm + "&appetizer")} />
@@ -244,7 +247,7 @@ return (
         </div>
         </div>
           <button type="submit" className="submit-btn">Search</button>
-          <button type="reset" className="submit-btn">Reset Search</button>
+          <button type="reset" className="submit-btn" >Reset Search</button>
         </div>
           </form>  
           </div>
