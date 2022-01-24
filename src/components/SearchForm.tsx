@@ -23,6 +23,7 @@ export function SearchForm({onSubmit}:SearchReicpe) {
         event.preventDefault();
 
         onSubmit(searchTerm);
+        // setSearchTerm("");
         setSearchTerm(searchTerm);
     }
 
@@ -68,15 +69,15 @@ return (
           <label className="label-filter" htmlFor="breakfast">Breakfast</label>
        <br/>
           <input type="checkbox" name="brunch" id="brunch" value="brunch"
-            onChange={()=>setSearchTerm(searchTerm + "&brunch")} />
+            onChange={isClick?  ()=>setSearchTerm(searchTerm + "&brunch"): ()=>setSearchTerm(searchTerm + "")} />
           <label className="label-filter" htmlFor="brunch">Brunch</label>
        <br/>
           <input type="checkbox" name="lunch-dinner" id="lunch-dinner" value="lunch+dinner"
-            onChange={()=>setSearchTerm(searchTerm + "&lunch/dinner")} />
+            onChange={isClick?  ()=>setSearchTerm(searchTerm + "&lunch/dinner"): ()=>setSearchTerm(searchTerm + "")} />
           <label className="label-filter" htmlFor="lunch-dinner">Lunch/Dinner</label>
       <br />
           <input type="checkbox" name="appetizer" id="appetizer" value="appetizer"
-            onChange={()=>setSearchTerm(searchTerm + "&appetizer")} />
+            onChange={isClick?  ()=>setSearchTerm(searchTerm + "&appetizer"): ()=>setSearchTerm(searchTerm + "")} />
           <label className="label-filter" htmlFor="appetizer">Appetizer</label>
        <br/>
           <input type="checkbox" name="cocktails" id="cocktails" value="cocktails"
@@ -91,7 +92,7 @@ return (
        <p className="filter-class">Cuisine: </p>
     
           <input type="checkbox" name="mediterranean" id="mediterranean" value="mediterranean"
-            onChange={()=>setSearchTerm(searchTerm + "&mediterranean")} />
+            onChange={isClick?  ()=>setSearchTerm(searchTerm + "&mediterranean"): ()=>setSearchTerm(searchTerm + "")} />
           <label className="label-filter" htmlFor="mediterranean">Mediterranean</label>
         <br/>
           <input type="checkbox" name="japanese" id="japanese" value="japanese"
