@@ -23,12 +23,7 @@ export function SearchForm({onSubmit}:SearchReicpe) {
         event.preventDefault();
 
         onSubmit(searchTerm);
-<<<<<<< HEAD
-        // setSearchTerm("");
-        setSearchTerm(searchTerm);
-=======
         setSearchTerm("");
->>>>>>> cb849d6986083cb899db9c53376a65db103a19ae
     }
 
   
