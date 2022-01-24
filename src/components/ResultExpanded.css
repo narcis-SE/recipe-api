@@ -1,12 +1,84 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 .close {
-    text-align: right;
+  text-align: right;
+  margin: 0;
 }
 
 .scroll {
-    overflow: auto;
+  overflow: auto;
+  max-height: 65vh;
+  max-width: 90vw;
+}
 
-    max-height: 65vh;
-    max-width: 90vw;
+.ResultExpanded {
+  padding: 0 2em 1em;
+  display: flex;
+  width: 600px;
+  height: 450px;
+  flex-direction: column;
+  border-bottom: 1px solid #d8d8d8;
+  position: relative;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.ResultExpanded::before,
+.ResultExpanded::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 30%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.ResultExpanded::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.ResultExpanded::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.ResultExpanded:hover::before,
+.ResultExpanded:hover::after {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.ResultExpanded:hover::before {
+  left: 5px;
+}
+
+.ResultExpanded:hover::after {
+  right: 5px;
+}
+
+.footer {
+  text-align: center;
+  margin: 0 3rem;
+}
+
+a {
+  font-family: Dancing Script;
+  font-size: 16px;
+  display: inline-block;
+  background-color: #cab8cb;
+  padding: 0.45em 1em;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 34px 0 rgba(255, 79, 135, 0.32);
 }

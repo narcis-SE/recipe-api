@@ -37,9 +37,11 @@ export function SearchForm({onSubmit}:SearchReicpe) {
 return (
      
   <div className="SearchForm" onSubmit={handleSearchSubmit}>
-    <form className="searchForm">
+    <form>
         <div className="searchBar">
-          <svg
+          
+      <label className="label-search" htmlFor="search">Search for a recipe</label><br />
+      <input type="text" name="search" onChange={(e)=>setSearchTerm(e.target.value)} /><svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
@@ -50,16 +52,14 @@ return (
                     >
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
-        
-      <label className="label-search" htmlFor="search">  Search for a recipe</label><br />
-      <input type="text" name="search" onChange={(e)=>setSearchTerm(e.target.value)} />
+      
 
     { !showFilters ?
     <p className="filterClickHere" onClick={clickOnce}>Click here to filter by type</p> : 
     <p className="filterClickHere" onClick={clickTwice}>Click here to close filters</p>
-}
+    }
 
-<div className="outerContainer" style={{ display: showFilters? "block" : "none"}}>
+    <div className="outerContainer" style={{ display: showFilters? "block" : "none"}}>
         <div className="filterContainer">
         <div className="innerContainer1">
           <p className="filter-class">Meal: </p>
