@@ -5,6 +5,7 @@ import { ResultExpanded } from './ResultExpanded';
 import { SmallRecipeProp } from './ResultList';
 import "./Result.css"
 import LikeButton from './LikeButton';
+import { recipeGroup, addRecipe } from "../models/recipe-model";
 
 export interface RecipeProp {
   recipe: Hits;
@@ -59,7 +60,7 @@ return (
         
             </Modal>
              }
-             <LikeButton />
+             {/* <LikeButton onClick={()=>addRecipe(recipe) }/> */}
 
         <p className="link"><a href={recipe.recipe.url} target="_blank">Link to Recipe</a></p>
       </div>

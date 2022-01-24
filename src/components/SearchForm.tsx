@@ -13,18 +13,18 @@ export interface FilterProps {
 export function SearchForm({onSubmit}:SearchReicpe) {
     const [searchTerm, setSearchTerm] = useState<string>("");
 
-    // let newSearch: = {};
+    const[isClick, setClick] = useState(true);
 
-    // function searchTermObject() {
-    //   newSearch = {
+    const checkButton = ()=>{
+      setClick(!isClick)
+    }
 
-    //   }
-    // }
 
     function handleSearchSubmit(event: FormEvent){
         event.preventDefault();
 
         onSubmit(searchTerm);
+        setSearchTerm(searchTerm);
     }
     
   const [ showFilters, setShowFilters ] = useState(false);
@@ -61,8 +61,10 @@ return (
         <div className="innerContainer1">
           <p className="filter-class">Meal: </p>
     
-          <input type="checkbox" name="breakfast" id="breakfast" value="=&breakfast"
-            onChange={(e)=>setSearchTerm(e.target.value)} />
+
+          <input type="checkbox" name="breakfast" id="breakfast" value="breakfast" onClick={checkButton}
+            onChange={isClick?  ()=>setSearchTerm(searchTerm + "&breakfast"): ()=>setSearchTerm(searchTerm + "")} />
+
           <label className="label-filter" htmlFor="breakfast">Breakfast</label>
        <br/>
           <input type="checkbox" name="brunch" id="brunch" value="brunch"

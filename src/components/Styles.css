@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:wght@300&display=swap");
 
 /* 
 . {
@@ -8,70 +8,94 @@
     font-family: Poppins;
     font-size: 14px;
     font-family: Open Sans;
+    // color theam simple and good for color blind access.
+    header #BEBCC5,
+    result.card #E2DAD1,
+    BG #DCB69F or #DCB69F,
+    font #2E2B21
+    
+
 }
 */
 
 body {
-    margin: 0px;
-    color: rgb(194, 113, 20);
+  margin: 0px;
+  color: #dcb69f;
+  background: whitesmoke;
+  border: solid;
+
 }
 
 .Header {
-    font-family: Dancing Script;
-    background-color: antiquewhite;
-    color: rgb(194, 113, 20)
+  font-family: Dancing Script;
+  background-color: #CDB1AD;
+  color: #2e2b21;
 }
 
 p {
-    font-family: Poppins;
-    font-size: 16px;
+  font-family: Poppins;
+  font-size: 16px;
 }
 
 h3 {
-    font-family: Dancing Script;
-    font-size: 30px;
+  font-family: Dancing Script;
+  font-size: 30px;
 }
 
 .link {
-    font-family: Dancing Script;
-    font-size: 16px;
+  font-family: Dancing Script;
+  font-size: 16px;
 }
 
-.SearchForm  {
-    display: flex;
-    align-items: center;
+.SearchForm {
+  display: flex;
+  align-items: center;
 }
 
 /*.ResultListContainer is for search input and button need to be adjuest the name */
 .ResultListContainer {
-    font-family: Dancing Script;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    border: 2px limegreen;
-    border-radius: 5px;
-    background-color: rgb(223, 206, 183);
-    color: brown;
+  font-family: Dancing Script;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: 2px #382119;
+  border-radius: 5px;
+  background-color: #e2dad1;
+  color: #382119;
 }
 
-.Result, .ResultContainer {
-    border-radius: 5px;
-    border-bottom: 2px solid darkred;
-    background-color: #fff;
-    color: brown;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 15px;
+.Result {
+  border: #383745 solid 3px;
+  border-radius: 5px;
+ /* border-bottom: 2px #382119; */
+  background-color: #e2dad1;
+  color: #382119;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
 
+}
+
+.ResultContainer {
+  border: #e2dad1 solid 2px;
+  border-radius: 5px;
+ /* border-bottom: 2px #382119; */
+  background-color: #e2dad1;
+  color: #382119;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
 }
 
 img {
-    border-radius: 50%;
-    box-shadow: dimgray;
-    cursor: pointer;
-    transition: all .1s ease-in-out;
+  border-radius: 50%;
+  box-shadow: dimgray;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
 }
 
 /* img:hover {
@@ -81,85 +105,84 @@ img {
  }  */
 
 .image {
-    box-shadow: rgb(145, 141, 141);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  box-shadow: rgb(145, 141, 141);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .topNav {
-    overflow: hidden;
-    background-color: #e9e9e9;
+  overflow: hidden;
+  background-color: #e9e9e9;
 }
 
 .topNav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-
-.SearchForm {
-    display: flex;
-    justify-content: space-evenly;
+  background-color: #ddd;
+  color: black;
 }
 
-topnav a.active {
-    background-color: rgb(64, 175, 98);
-    color: white;
-  }
-  
-  .topnav .searchFormContainer {
-    float: right;
-  }
-  
-  .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-  }
-  
-  .topnav .searchFormContainer button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .topnav .searchFormContainer button:hover {
-    background: #ccc;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .topnav .searchFormContainer {
-      float: none;
-    }
-    .topnav a, .topnav input[type=text], .topnav .searchFormContainer button {
-      float: none;
-      display: block;
-      text-align: left;
-      width: 100%;
-      margin: 0;
-      padding: 14px;
-    }
-    .topnav input[type=text] {
-      border: 1px solid #ccc;  
-    }
+.SearchForm {
+  display: flex;
+  justify-content: space-evenly;
+}
 
+.topnav a.active {
+  background-color: rgb(64, 175, 98);
+  color: white;
+}
+
+.topnav .searchFormContainer {
+  float: right;
+}
+
+.topnav input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .searchFormContainer button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .searchFormContainer button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 768px) {
+  .topnav .searchFormContainer {
+    float: none;
   }
+  .topnav a,
+  .topnav input[type="text"],
+  .topnav .searchFormContainer button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type="text"] {
+    border: 1px solid #ccc;
+  }
+}
