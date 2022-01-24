@@ -31,7 +31,7 @@ export function ResultList() {
 
   return (
     <div className="ResultList">
-      <div className="SearchForm">
+      <div>
         <SearchForm onSubmit={handleFormSubmit} />
       </div>
       <br></br>
