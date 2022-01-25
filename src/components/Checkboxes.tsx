@@ -8,82 +8,83 @@ import "./SearchForm.css";
 // "Egg Free","Peanut Free","Tree Nut Free","Soy Free","Shellfish Free","Pork Free","Red Meat Free","Kosher"];
 
 
-export interface SearchReicpe {
-  onSubmit: (searchTerm: string) => void;
-}
+// export interface SearchReicpe {
+//   onSubmit: (searchTerm: string) => void;
+// }
 
-export interface FilterProps {
-  searchTerm: string,
-  setSearchTerm: (searchTerm)=>void
-}
+// export interface FilterProps {
+//   searchTerm: string,
+//   setSearchTerm: (searchTerm)=>void
+// }
 
-export function SearchForm({onSubmit}:SearchReicpe) {
-    const [searchTerm, setSearchTerm] = useState<string>("");
-    const [textSearchTerm, setTextSearchTerm] = useState<string>("");
-    const [checked, setChecked] = useState(false)
+// export function SearchForm({onSubmit}:SearchReicpe) {
 
-    const [vegetarian, setVegetarian] = useState(false)
-    const [glutenFree, setGlutenFree] = useState(false)
-    const [lowCarb, setLowCarb] = useState(false)
+//     const [searchTerm, setSearchTerm] = useState<string>("");
+//     const [textSearchTerm, setTextSearchTerm] = useState<string>("");
+//     const [checked, setChecked] = useState(false)
 
-    if (vegetarian) {
-        searchTerm + "&vegetarian"
-    }
+//     const [vegetarian, setVegetarian] = useState(false)
+//     const [glutenFree, setGlutenFree] = useState(false)
+//     const [lowCarb, setLowCarb] = useState(false)
 
-    if (lowCarb) {
-        searchTerm + "&lowCarb"
-    }
+//     if (vegetarian) {
+//         searchTerm + "&vegetarian"
+//     }
 
-    if (glutenFree) {
-        searchTerm + "&glutenFree"
-    }
+//     if (lowCarb) {
+//         searchTerm + "&lowCarb"
+//     }
+
+//     if (glutenFree) {
+//         searchTerm + "&glutenFree"
+//     }
 
 
-    const handleClick = () => setChecked(!checked)
+//     const handleClick = () => setChecked(!checked)
 
-    function handleSearchSubmit(e: FormEvent){
-        e.preventDefault();
+//     function handleSearchSubmit(e: FormEvent){
+//         e.preventDefault();
  
-        onSubmit(textSearchTerm + searchTerm);
+//         onSubmit(textSearchTerm + searchTerm);
       
-    }
+//     }
     
-  const [ showFilters, setShowFilters ] = useState(false);
+//   const [ showFilters, setShowFilters ] = useState(false);
   
-  const clickOnce = () => setShowFilters(true);
-  const clickTwice = () => setShowFilters(false);
+//   const clickOnce = () => setShowFilters(true);
+//   const clickTwice = () => setShowFilters(false);
 
-return (
+// return (
      
-  <div className="SearchForm" onSubmit={handleSearchSubmit}>
-    <form className="searchForm">
-        <div className="searchBar">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="search-icon"
-            viewBox="0 0 16 16"
-            onClick={handleSearchSubmit}
-                    >
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-          </svg>
-      <label className="label-search" htmlFor="search">  Search for a recipe</label><br />
-      <input type="text" name="search" onChange={(e)=>setTextSearchTerm(e.target.value)} />
+//   <div className="SearchForm" onSubmit={handleSearchSubmit}>
+//     <form className="searchForm">
+//         <div className="searchBar">
+//           <svg
+//             xmlns="http://www.w3.org/2000/svg"
+//             width="16"
+//             height="16"
+//             fill="currentColor"
+//             className="search-icon"
+//             viewBox="0 0 16 16"
+//             onClick={handleSearchSubmit}
+//                     >
+//             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+//           </svg>
+//       <label className="label-search" htmlFor="search">  Search for a recipe</label><br />
+//       <input type="text" name="search" onChange={(e)=>setTextSearchTerm(e.target.value)} />
 
-    { !showFilters ?
-    <p className="filterClickHere" onClick={clickOnce}>Click here to filter by type</p> : 
-    <p className="filterClickHere" onClick={clickTwice}>Click here to close filters</p>
-}
+//     { !showFilters ?
+//     <p className="filterClickHere" onClick={clickOnce}>Click here to filter by type</p> : 
+//     <p className="filterClickHere" onClick={clickTwice}>Click here to close filters</p>
+// }
 
-<div className="outerContainer" style={{ display: showFilters? "block" : "none"}}>
-        <div className="filterContainer">
-        <div className="innerContainer1">
-          <p className="filter-class">Meal: </p>
+// <div className="outerContainer" style={{ display: showFilters? "block" : "none"}}>
+//         <div className="filterContainer">
+//         <div className="innerContainer1">
+//           <p className="filter-class">Meal: </p>
 
           {/* Test Boxes: */}
-
+{/* 
           <input type="checkbox" name="vegetarian" id="vegetarian" value="+&vegetarian"
             onChange={()=>setVegetarian(true)} />
           <label className="label-filter" htmlFor="vegetarian">Vegetarian</label>
@@ -95,7 +96,7 @@ return (
           <input type="checkbox" name="lowCarb" id="lowCarb" value="+&low+carb"
             onChange={()=>setLowCarb(true)} />
           <label className="label-filter" htmlFor="lowcarb">Low Carb</label>
-       <br/>
+       <br/> */}
        {/* END OF TEXT BOXES */}
     
 
@@ -233,15 +234,15 @@ return (
             onChange={()=>setSearchTerm(searchTerm + "&kosher")} />
           <label className="label-filter" htmlFor="kosher">Kosher</label>
         <br/> */}
-        </div>
-        </div>
-        </div>
-          <button type="submit" className="submit-btn">Search</button>
-        </div>
-          </form>  
-          </div>
-        )
-    }
+    //     </div>
+    //     </div>
+    //     </div>
+    //       <button type="submit" className="submit-btn">Search</button>
+    //     </div>
+    //       </form>  
+    //       </div>
+    //     )
+    // }
 
 
 

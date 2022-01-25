@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import { Hits } from '../models/recipe-model';
 import Modal from 'react-modal';
 import { ResultExpanded } from './ResultExpanded';
-import "./Result.css"
 import Heart from "react-animated-heart"
-import ListOfFavorites from './ListOfFavorites';
+import "./Result.css"
 
 export interface RecipeProp {
   recipe: Hits;
@@ -56,7 +55,7 @@ return (
             <div className= "heart" style={{textAlign:"center"}} >
                 <Heart isClick={isClick} onClick={likeButton}>{isClick? "unlike":"like"}/</Heart>
             </div>
-            <button onClick={likeButton}>{isClick? "Unlike":"Like"}</button>
+            {/* <button onClick={likeButton}>{isClick? "Unlike":"Like"}</button> */}
         </div>
 
         
