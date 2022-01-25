@@ -3,6 +3,7 @@ import { Hits } from "../models/recipe-model"
 import Modal from 'react-modal'
 import { useState } from "react"
 import {ResultExpanded} from "./ResultExpanded"
+import "./ListOfFavorites.css"
 
 interface Props {
     recipe: Hits
@@ -46,9 +47,10 @@ function ListOfFavorites2({recipe, onDelete}:Props) {
 
                 </Modal>
             }
-             <p onClick={openModal}>{recipe.recipe.label}</p>
-             <a href={recipe.recipe.url}>Link to Recipe</a>
-            <i className="material-icons" onClick={onDelete}>delete</i>
+             <p onClick={openModal}>{recipe.recipe.label}
+             <i className="material-icons" onClick={onDelete}>delete</i></p>
+             <p className="favelink" ><a href={recipe.recipe.url} target="_blank">Link to Recipe</a></p>
+            
         </div>
     )
 }

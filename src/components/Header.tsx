@@ -4,7 +4,7 @@ import "./Styles.css"
 export function Header() {
     return (
         <div className="Header">
-            <h1>Recipe App</h1>
+            <h1>NutriYou</h1>
 
         </div>
     )

@@ -40,7 +40,7 @@ export function ResultList() {
       </div>
       <br></br>
 
-      <h1>Recipes For You</h1>
+      <h1 className="recipeforyou">Recipes For You</h1>
       <ul className="ResultContainer">
         {recipeList.map((recipe, i) => (
 
